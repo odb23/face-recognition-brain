@@ -1,0 +1,8 @@
+.Tilt{
+    background: linear-gradient(89deg, #FF5EDF 0%, #04c8de 100%);
+    margin: 5px;
+}
+
+.Tilt-inner {
+    text-align: center;
+}
