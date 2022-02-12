@@ -16,7 +16,7 @@ export const options = {
       bubble: {
         distance: 400,
         duration: 2,
-        opacity: 0.8,
+        opacity: 0.6,
         size: 40,
       },
       push: {
@@ -48,14 +48,14 @@ export const options = {
       outMode: "bounce",
       random: false,
       speed: 4,
-      straight: false,
+      straight: true,
     },
     number: {
       density: {
         enable: true,
         area: 800,
       },
-      value: 80,
+      value: 50,
     },
     opacity: {
       value: 0.5,
@@ -64,8 +64,8 @@ export const options = {
       type: "circle",
     },
     size: {
-      random: true,
-      value: 5,
+      random: false,
+      value: 1,
     },
   },
   detectRetina: true,
