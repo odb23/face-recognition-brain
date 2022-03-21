@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
 import Rank from './components/Rank/Rank';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Particles from "react-tsparticles";
 import {options} from './options.js';
@@ -13,16 +14,21 @@ class App extends Component {
     super();
     this.state = {
       input: '',
+      imageUrl: '',
     };
   }
 
   onInputChange = (event) => {
-    console.log(event.target.value);
+        this.setState({
+          input: event.target.value
+        });
   }
 
   onSubmit = () => {
-    console.log('click');
-    getClarifaiData("https://image.shutterstock.com/image-photo/close-portrait-smiling-handsome-man-260nw-1011569245.jpg");
+    this.setstate({
+      imageUrl: this.state.input,
+    })
+    getClarifaiData(this.state.input);
   }
   
   render() {
@@ -35,7 +41,7 @@ class App extends Component {
         <ImageLinkForm  
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}/>
-        {/* <FaceRecognition /> */}
+        <FaceRecognition imageUrl={this.state.imageUrl}/>
       </div>
     );
   }

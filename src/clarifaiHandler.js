@@ -25,7 +25,8 @@ export const getClarifaiData = (imageUrl) => {
       };
       
       fetch("https://api.clarifai.com/v2/models/face-detection/outputs", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(JSON.parse(result, null, 2).outputs[0].data))
+        .then(response => JSON.parse(response.text(), null, 2))
+        .then(result => {
+          console.log(result.outputs[0].data.regions[0].region_info.bounding_box)})
         .catch(error => console.log('error', error));
 }
