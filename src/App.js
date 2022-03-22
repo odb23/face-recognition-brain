@@ -15,6 +15,9 @@ class App extends Component {
     this.state = {
       input: '',
       imageUrl: '',
+      box: {
+
+      },
     };
   }
 
@@ -28,7 +31,11 @@ class App extends Component {
     this.setstate({
       imageUrl: this.state.input,
     })
-    getClarifaiData(this.state.input);
+    this.displayFaceBox(getClarifaiData(this.state.input));
+  }
+
+  displayFaceBox = (box) => {
+    this.setState({box: box});
   }
   
   render() {
@@ -41,7 +48,7 @@ class App extends Component {
         <ImageLinkForm  
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}/>
-        <FaceRecognition imageUrl={this.state.imageUrl}/>
+        <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl}/>
       </div>
     );
   }
