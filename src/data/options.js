@@ -47,7 +47,7 @@ export const options = {
       enable: true,
       outMode: "bounce",
       random: false,
-      speed: 4,
+      speed: 1,
       straight: true,
     },
     number: {
@@ -55,10 +55,10 @@ export const options = {
         enable: true,
         area: 800,
       },
-      value: 100,
+      value: 85,
     },
     opacity: {
-      value: 0.5,
+      value: 0.3,
     },
     shape: {
       type: "circle",
